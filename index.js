@@ -1,5 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const path = require('path');
+
+const dir = './examples';
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
 
 inquirer.prompt([
     { type: 'input', name: 'text', message: 'Enter up to three characters for the logo:' },
@@ -7,14 +13,10 @@ inquirer.prompt([
     { type: 'list', name: 'shape', message: 'Choose a shape:', choices: ['Circle', 'Triangle', 'Square'] },
     { type: 'input', name: 'shapeColor', message: 'Enter shape color (keyword or hex):' }
 ]).then(answers => {
-    // Destructure user input
     const { text, textColor, shape, shapeColor } = answers;
 
-    // Create the logo
     const createLogo = (text, textColor, shape, shapeColor) => {
         let shapeElement = '';
-
-        // Generate the appropriate SVG shape
         if (shape === 'Circle') {
             shapeElement = `<circle cx="150" cy="100" r="80" fill="${shapeColor}" />`;
         } else if (shape === 'Triangle') {
@@ -23,7 +25,6 @@ inquirer.prompt([
             shapeElement = `<rect x="70" y="20" width="160" height="160" fill="${shapeColor}" />`;
         }
 
-        // Return the complete SVG string
         return `
         <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
             ${shapeElement}
@@ -32,12 +33,12 @@ inquirer.prompt([
         `;
     };
 
-    // Generate the logo
     const logo = createLogo(text, textColor, shape, shapeColor);
 
-    // Write the logo to a file
-    fs.writeFileSync('logo.svg', logo);
-
-    // Output success message
-    console.log('Generated logo.svg');
+    try {
+        fs.writeFileSync(path.join(dir, 'logo.svg'), logo);
+        console.log('Generated logo.svg in the examples folder');
+    } catch (err) {
+        console.error('Error creating SVG file:', err);
+    }
 });
