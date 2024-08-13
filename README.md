@@ -89,4 +89,4 @@ SVG Logo Generator
 	        •	Email: liapis.jsl@gmail.com
 
 
-    This README.md should now be a good match for your project. Make sure to replace placeholders like the video link and email address with your actual  information. This file will provide all necessary information about your project to anyone who views it on GitHub.
+
