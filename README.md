@@ -87,6 +87,8 @@ SVG Logo Generator
 
 	        •	GitHub: JimiL555
 	        •	Email: liapis.jsl@gmail.com
+            
+    My-Project-10 GitHub Repo HTTPS: https://github.com/JimiL555/My-Project-10.git
 
 
 
