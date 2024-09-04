@@ -58,7 +58,7 @@ SVG Logo Generator
 
         A video walkthrough demonstrating how to use the SVG Logo Generator and showing the tests passing can be viewed here:
 
-            Watch the Walkthrough Video: https://vscode.dev/github/JimiL555/My-Project-10/blob/main/HowToVideo/HowToVideo-Project_10.mov
+            Watch the Walkthrough Video: https://youtu.be/QcyvzCjIbJo
 
     Tests
 
